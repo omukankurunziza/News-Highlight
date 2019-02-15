@@ -2,7 +2,10 @@ class Config:
     '''
     General configuration parent class
     '''
-    pass
+
+    NEWS_API_BASE_URL= 'curl https://newsapi.org/v2/top-headlines -G \
+    -d country=us \
+    -d apiKey=5bf78fd2f43a4de790ccc54004d607fa'
 
 
 
