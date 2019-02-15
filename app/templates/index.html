@@ -8,5 +8,13 @@
     <title>Welcome to the best Movie Review website</title>
     {% endif %}
   </head>
-  <body></body>
+  <body>
+    <!-- Popular movie section  -->
+    <h3>Popular news</h3>
+    <ul>
+      {% for popular_news in popular %}
+      <li>{{ popular_news.title }}</li>
+      {% endfor %}
+    </ul>
+  </body>
 </html>

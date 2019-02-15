@@ -3,9 +3,7 @@ class Config:
     General configuration parent class
     '''
 
-    NEWS_API_BASE_URL= 'curl https://newsapi.org/v2/top-headlines -G \
-    -d country=us \
-    -d apiKey=5bf78fd2f43a4de790ccc54004d607fa'
+    NEWS_API_BASE_URL= 'https://newsapi.org/v2/everything?q=bitcoin&from=2019-01-15&sortBy=publishedAt&apiKey=5bf78fd2f43a4de790ccc54004d607fa'
 
 
 
