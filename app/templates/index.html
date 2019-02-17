@@ -12,27 +12,27 @@
   <body>
       {% extends 'base.html'%}
       {% import 'macros.html' as macro%}
-      {% import 'macros.html' as macro%}
-    <!-- Popular news -->
-    <h3>Popular news</h3>
-    <ul>
-      {{
-        macro.displayNewsList(popular)
-      }}
-    </ul>
-    <!-- Upcoming news  -->
-    <h3>Upcoming news</h3>
-    <ul>
-      {{
-        macro.displayNewsList(upcoming)
-      }}
-    </ul>
-    <!-- Now showing news -->
-    <h3>Now Showing</h3>
-    <ul>
-      {{
-        macro.displayNewsList(now_showing)
-      }}
+    <!-- Content block -->
+{% block content %}
+
+<!-- Popular news -->
+<h3> Popular news</h3>
+<ul>
+    {{ macro.displayNewsList(popular)}}
+</ul>
+<!-- Upcoming news  -->
+<h3> Upcoming news </h3>
+<ul>
+    {{ macro.displayNewsList(upcoming)}}
+</ul>
+<!-- Now showing news -->
+<h3>Now Showing</h3>
+<ul>
+    {{ macro.displayNewsList(now_showing)}}
+</ul>
+
+
+{% endblock%}
     </ul>
   </body>
 </html>
