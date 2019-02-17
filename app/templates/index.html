@@ -6,12 +6,11 @@
     <title>{{ title }}</title>
     {% else %}
     <title>Welcome to the best news Review website</title>
-    {% endif %}
+    {% endif %}{% extends 'base.html'%}
+    {% import 'macros.html' as macro%}
   </head>
   
   <body>
-      {% extends 'base.html'%}
-      {% import 'macros.html' as macro%}
     <!-- Content block -->
 {% block content %}
 
