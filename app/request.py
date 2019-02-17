@@ -18,18 +18,18 @@ def get_news(category):
 
         news_articles = None
 
-        if get_news_response['results']:
+        if get_news_response['articles']:
             news_articles_list = get_news_response['articles']
-            mnews_articles = process_results(news_articles_list)
+            news_articles = process_articles(news_articles_list)
 
 
     return news_articles
 def process_articles(news_list):
     '''
-    Function  that processes the news result and transform them to a list of Objects
+    Function  that processes the news articles and transform them to a list of Objects
 
     Args:
-        movie_list: A list of dictionaries that contain news details
+        news_list: A list of dictionaries that contain news details
 
     Returns :
         news_articles: A list of news objects
@@ -37,7 +37,7 @@ def process_articles(news_list):
     news_articles = []
     for news_item in news_list:
         id = news_item.get('id')
-        name = newse_item.get('name')
+        name = news_item.get('name')
         author = news_item.get('author')
         title = news_item.get('title')
         description = news_item.get('description')

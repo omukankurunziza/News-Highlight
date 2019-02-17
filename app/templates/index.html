@@ -9,12 +9,26 @@
     {% endif %}
   </head>
   <body>
-    <!-- Popular movie section  -->
+    <!-- Popular news section  -->
     <h3>Popular news</h3>
     <ul>
       {% for popular_news in popular %}
       <li>{{ popular_news.title }}</li>
       {% endfor %}
+    < <!-- Upcoming news  -->
+    <h3> Upcoming news </h3>
+     <ul>
+        {% for upcoming_movie in upcoming %}
+            <li>{{ upcoming_news.title}}</li>
+        {% endfor %}
     </ul>
+    <!-- Now showing news -->
+    <h3>Now Showing</h3>
+     <ul>
+        {% for now_showing_news in now_showing %}
+            <li>{{ now_showing_news.title}}</li>
+        {% endfor %}
+    </ul>/ul>
+
   </body>
 </html>
