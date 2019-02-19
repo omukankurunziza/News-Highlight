@@ -1,23 +1,35 @@
-
 {% extends 'base.html'%}
+{% import 'macros.html' as macro%}
+<!-- Styles block -->
+
+{% block styles%}
+    {{ super() }}
+    <link rel="stylesheet" href="{{url_for('static',filename='css/news.css')}}">
+{% endblock %}
+
 <!-- Content block -->
+
 {% block content %}
 <div class="container">
 
-    <!-- image background -->
+    <!-- Poster background -->
     <div class="row">
-        <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6 urlToImage" style="background: url({{news.urlToImage}}) no-repeat center center">
+        {% for news in news %}
+        <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6 posterPath" style="background: url({{news.urlToImage}}) no-repeat center center">
+            <img src="{{news.urlToImage}}" height="200px, width=50px",float="no-repeat center center">
         </div>
-
         <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6 news-details">
             <h3>{{ news.title }}</h3>
-
-            <p class="overview"> {{news. publishedAt }}</p>
-            <p class="ratings"> <b> {{ news.description }}</b> - <i>{{ news.description}} description </i> </p>
-
-
+            <p class="author"> {{ news.author }}</p>
+            <p class="image"> {{ news.urlToImage }}</p>
+            <p class="date"> {{ news.publishedAt }}</p>
+            <p class="url"> {{ news.url }}</p>
+            <p class="description"> {{ news.description }}</p>
+            <p class="content"> {{ news.content }}</p>
+            <a class="ratings" href="/news/review/new/{{news.title}}"> Write a new review</a>
+            
         </div>
-    </div>
-
-</div>
+        {% endfor %}
+    </div> 
+</div> 
 {% endblock %}
