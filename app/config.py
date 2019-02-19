@@ -3,7 +3,7 @@ class Config:
     General configuration parent class
     '''
     NEWS_SOURCE_API_BASE_URL= 'https://newsapi.org/v2/sources?apiKey=2ac4f1aeb1c84eba9807e140b299880e'
-    NEWS_API_BASE_URL= 'https://newsapi.org/v2/everything?{}&apiKey=2ac4f1aeb1c84eba9807e140b299880e'
+    NEWS_API_BASE_URL= 'https://newsapi.org/v2/everything?sources={}&apiKey={}'
     NEWS_API_KEY ='2ac4f1aeb1c84eba9807e140b299880e'
 
 

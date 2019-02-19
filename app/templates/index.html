@@ -21,4 +21,11 @@
     <input type="submit" value="Submit" class="btn btn-default" />
   </form>
 </div>
-{% endblock%}
+{% for news in popular %}
+
+<div class="col-xs-12 col-sm-4 col-md-2 col-lg-2 news-card">
+  <li class="text-center">
+    <a href="/news/{{ news.id }}"> {{ news.name|truncate(10)}}</a>
+  </li>
+</div>
+{% endfor %} {% endblock%}

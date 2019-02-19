@@ -18,6 +18,7 @@ def index():
     title = 'Home - Welcome to The best News Articles Website Online'
 
     popular_news = get_sources('everything')
+    print(popular_news)
     # business_sources = get_sources('business')
     # techCrunch_sources = get_sources('techCrunch')
     # publishedAt_sources= get_sources('publishedAt')
@@ -34,18 +35,18 @@ def index():
     
 
 
-@app.route('/news/<title>')
-def news(title):
+@app.route('/news/<id>')
+def news(id):
 
     '''
     View news page function that returns the news details page and its data
     '''
-    news = get_news(title)
+    news = get_news(id)
 
-    title = f'{title}'
-    # reviews = Review.get_reviews(news.title)
+    title = f'{id}'
+   
 
-    return render_template('news.html',title = title,news=news)
+    return render_template('news.html',news=news)
 
 @app.route('/search/<news_author>')
 def search(news_author):

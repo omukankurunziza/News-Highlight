@@ -8,7 +8,7 @@ Source = news.Source
 # Getting api key
 api_key = app.config['NEWS_API_KEY']
 # Getting the news base url
-news_base_url = app.config["NEWS_API_BASE_URL"]
+news_discription = app.config["NEWS_API_BASE_URL"]
 source_base_url = app.config["NEWS_SOURCE_API_BASE_URL"]
 
 def get_sources(category):
@@ -27,7 +27,7 @@ def get_sources(category):
             source_results_list = get_sources_response['sources']
             source_results = process_results(source_results_list)
 
-
+    # print(source_results)
     return source_results
 
 def process_results(source_list):
@@ -51,7 +51,7 @@ def process_results(source_list):
     
 def get_news(id):
     '''Function thet gets the json response to our url request'''
-    get_news_url = news_base_url.format(id)
+    get_news_url = news_discription.format(id,api_key)
     print(get_news_url)
 
     with urllib.request.urlopen(get_news_url) as url:
@@ -81,13 +81,12 @@ def process_articles(news_list):
         id = news_item.get('id')
         name = news_item.get('name')
         author=news_item.get('author')
-        title = news_item.get('title')
         description = news_item.get('description')
         urlToImage = news_item.get('urlToImage')
         publishedAt = news_item.get('publishedAt')
 
         if urlToImage:
-            news_object = News(id,name,author,title,description,urlToImage,publishedAt)
+            news_object = News(id,name,author,description,urlToImage,publishedAt)
             news_results.append(news_object)
 
     return news_results

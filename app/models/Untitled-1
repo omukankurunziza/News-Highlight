@@ -1,0 +1,2 @@
+style="background: url({{ new.urlToImage }}) no-repeat center center"
+ <a class="ratings" href="/news/review/new/{{ news.title }}">
