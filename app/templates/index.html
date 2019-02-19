@@ -6,11 +6,11 @@
     <title>{{ title }}</title>
     {% else %}
     <title>Welcome to the best news Review website</title>
-    
+    {% endif %}
   </head>
    
   <body>
-    {% endif %}
+    
     {% extends 'base.html'%}
     {% import 'macros.html' as macro%}
     <!-- Styles block -->
@@ -21,21 +21,28 @@
     {% endblock %}
     <!-- Content block -->
     {% block content %}
+    <div class="container">
+        <form>
+            <input type="text" name="news_query" placeholder="Search for a News" class="form-control">
+            <input type="submit"  value="Submit" class="btn btn-default">
+        </form>
+    
+    </div>
 
-    <!-- Popular news -->
-    <h3> Popular news</h3>
+    <!-- general news -->
+    <h3> general news</h3>
     <ul>
-        {{ macro.displayNewsList(popular)}}
+        {{ macro.displayNewsList(general)}}
     </ul>
-    <!-- Upcoming news  -->
-    <h3> Upcoming news </h3>
+    <!-- business news  -->
+    <h3> business news </h3>
     <ul>
-        {{ macro.displayNewsList(upcoming)}}
+        {{ macro.displayNewsList(business)}}
     </ul>
-    <!-- Now showing news -->
-    <h3>Now Showing</h3>
+    <!-- technology news -->
+    <h3>technology</h3>
     <ul>
-        {{ macro.displayNewsList(now_showing)}}
+        {{ macro.displayNewsList(technology)}}
     </ul>
 
 
