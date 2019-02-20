@@ -15,7 +15,7 @@ def index():
     '''
 
      # Getting popular news
-    title = 'Home - Welcome to The best News Articles Website Online'
+    title = 'NewsHighlight'
 
     popular_news = get_sources('everything')
     print(popular_news)
