@@ -81,18 +81,19 @@ def process_articles(news_list):
         id = news_item.get('id')
         name = news_item.get('name')
         author=news_item.get('author')
+        url=news_item.get('url')
         description = news_item.get('description')
         urlToImage = news_item.get('urlToImage')
         publishedAt = news_item.get('publishedAt')
 
         if urlToImage:
-            news_object = News(id,name,author,description,urlToImage,publishedAt)
+            news_object = News(id,name,author,url,description,urlToImage,publishedAt)
             news_results.append(news_object)
 
     return news_results
     
-def search_news(news_id):
-    search_news_url = 'https://newsapi.org/v2/everything?api_key={}&query={}'.format(api_key,news_id)
+def search_news(news_name):
+    search_news_url = 'https://newsapi.org/v2/everything?api_key={}&query={}'.format(api_key,news_name)
 
     with urllib.request.urlopen(search_news_url) as url:
         search_news_data = url.read()

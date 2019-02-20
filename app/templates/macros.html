@@ -1,12 +1,14 @@
 {% macro displayNewsList(news_list) %} 
   {% for news in news_list %}
-
-  <div class="col-xs-12 col-sm-4 col-md-2 col-lg-2 news-card">
-  
-    <li class="text-center">
-      <a href="/news/{{ news.id }}"> 
-        {{ news.name|truncate(10)}}</a>
-    </li>
+  <div class="col-xs-12 col-sm-6 col-md-4 col-lg-4">
+    <div class="panel" style="border-bottom: 1px solid brown;">
+      <div class="panel-heading" style="background-color:cyan; color: #fff; font-size: 18px;">{{news.name}}
+      </div>
+      <div class="panel-body" style="font-size: 16px;">
+        <p>{{news.name| truncate(100)}}</p>
+        <a href="/news/{{news.id}}" class="btn" style="color: #fff; background-color: #000;">See more from this site</a>
+      </div>
+    </div>
   </div>
   {% endfor %} 
 {% endmacro %}

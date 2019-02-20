@@ -1,5 +1,4 @@
-{% extends 'base.html'%} 
-{% import 'macros.html' as macro%}
+{% extends 'base.html'%} {% import 'macros.html' as macro%}
 <!-- Styles block -->
 
 {% block styles%}
@@ -17,7 +16,7 @@
     <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6 posterPath">
       <img
         src="{{ new.urlToImage }}"
-        height="200px, width=50px"
+        height="180px, width=50px"
         ,float="no-repeat center center"
       />
     </div>
@@ -25,12 +24,10 @@
       <h3>{{ new.title }}</h3>
       <p class="author">{{ new.author }}</p>
       <p class="date">{{ new.publishedAt }}</p>
-      <p class="url">{{ new.url }}</p>
+      <a href="{{new.url}}" target="_blank" class="btn" style="background-color:teal; color: #fff; margin-top: 5px;">Read more...</a>
       <p class="description">{{ new.description }}</p>
       <p class="content">{{ new.content }}</p>
-     
-        Write a new review</a
-      >
+      <!-- <a class="ratings" href="/news/review/new/{{news.title}}"> Write a new review</a> -->
     </div>
     {% endfor %}
   </div>

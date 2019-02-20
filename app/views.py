@@ -48,8 +48,8 @@ def news(id):
 
     return render_template('news.html',news=news)
 
-@app.route('/search/<news_author>')
-def search(news_author):
+@app.route('/search/<news_name>')
+def search(news_name):
     '''
     View function to display the search results
     '''
